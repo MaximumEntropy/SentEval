@@ -195,7 +195,7 @@ class SplitClassifier(object):
                                  seed=self.seed, cudaEfficient=self.cudaEfficient)
                 elif self.classifier == 'MLP':
                     clf = MLP(inputdim=self.featdim, hiddendim=self.nhid, nclasses=self.nclasses,\
-                              l2reg=reg, seed=self.seed, cudaEfficient=self.cudaEfficient)
+                              l2reg=reg, seed=self.seed)
                 # small hack : MultiNLI/SNLI specific
                 if self.nepoches: clf.nepoches = self.nepoches
                 if self.maxepoch: clf.maxepoch = self.maxepoch
@@ -216,7 +216,7 @@ class SplitClassifier(object):
                              seed=self.seed, cudaEfficient=self.cudaEfficient)
             elif self.classifier == 'MLP':
                 clf = MLP(inputdim = self.featdim, hiddendim=self.nhid, nclasses=self.nclasses,\
-                          l2reg=optreg, seed=self.seed, cudaEfficient=self.cudaEfficient)
+                          l2reg=optreg, seed=self.seed)
             # small hack : MultiNLI/SNLI specific
             if self.nepoches: clf.nepoches = self.nepoches
             if self.maxepoch: clf.maxepoch = self.maxepoch
